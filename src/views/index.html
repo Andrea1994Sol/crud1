@@ -1,0 +1,81 @@
+
+{% extends 'layouts/home.html' %} {% block tittle %} Shorten {% endblock %} {% block contents %}
+
+<nav class="navbar navbar-expand navbar-pink bg-pink">
+    <div class="container-fluid" style="background-color: #fed6e3">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto" >
+                <li class="nav-item-n">
+            <a style="background-color: #fed6e3; color: black; font-size: 20px" class="nav-link active" aria-current="page" href="{{url_for('users')}}">Users</a>
+        </li>
+                <li class="nav-item-l">
+            <a style="background-color: #fed6e3; color: black;font-size: 20px" class="nav-link active"   href="{{url_for('listUrls')}}">Urls</a>
+        </li>
+                <li class="nav-item-m">
+            <a style="background-color: #fed6e3; color: black; font-size: 20px" class="nav-link active"  href="{{url_for('login')}}">Login</a>
+        </li>
+                <li class="nav-item-o">
+            <a style="background-color: #fed6e3; color: black; font-size: 20px" class="nav-link active"  href="{{url_for('logout')}}">Log Out</a>
+        </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1 class="display-1" align="center">Pink Shortener</h1>
+<br>
+
+<br>
+    <br>
+    <br>
+<div class="container" style=" width: max-content" align="center" >
+<form class="row gx-1 align-items-center" action="{{ url_for('createURL') }}" method="POST">
+        <div class="col-sm-8">
+    <input style="height: 46px" type="text" class="form-control" align="center" name="url" placeholder="paste url shorter">
+        </div>
+        <div class="col-auto">
+    <button type="submit" class="btn btn-outline-light" style="background-color: #e3fbf4; font-size: 20px; color: #252537">
+        Shorten
+    </button>
+        </div>
+</form>
+</div>
+{% endblock %}
+
+{% block login_css %}
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+    .navbar .nav-item-l:not(:last-child) {
+
+        margin-right: 20px;
+
+    }
+    .navbar .nav-item-m:not(:last-child) {
+
+        margin-right: 20px;
+
+    }
+    .navbar .nav-item-n:not(:last-child) {
+
+        margin-left: 790px;
+        margin-right: 18px;
+
+    }
+
+
+
+    body {
+        background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+        background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+
+        font-family: 'Vibur', cursive;
+        /*   the main font */
+        font-family: 'Abel', sans-serif;
+        opacity: .95;
+        /* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+    }
+</style>
+
+{% endblock %}

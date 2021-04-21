@@ -1,0 +1,17 @@
+{% extends 'layouts/home.html' %} 
+{% block tittle %} Shorten URLS {% endblock %}
+
+{% block contents %}
+<h1>Shorten URLS</h1>
+
+<form action="{{ url_for('createURL') }}" method="POST">
+    <input type="text" name="url" placeholder="paste url shorter">
+    <br>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary">
+        Shorten
+    </button>
+</form>
+
+{% endblock%}
